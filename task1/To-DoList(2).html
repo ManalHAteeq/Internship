@@ -13,7 +13,7 @@
             const newTaskInput = document.getElementById("newTask");
             const taskText = newTaskInput.value.trim();
             if (taskText !== "") {
-                const table = document.querySelector(".borderlist");
+                const table = document.querySelector(".todos-list");
                 const listItem = document.createElement("div");
                 listItem.className = "list-item";
                 if (taskCount % 2 === 0) {
@@ -27,19 +27,18 @@
                     <button class="edit-button" onclick="editTask(this)"><i class="fa fa-edit"></i></button>
                     <button class="delete-button" onclick="deleteTask(this)"><i class="fa fa-trash"></i></button>
                 </div>
-                
                 `;
-                const list = document.querySelector(".borderlist");
+                const list = document.querySelector(".todos-list");
                 list.appendChild(listItem);
                 newTaskInput.value = "";
                 taskCount++;
                 if (taskCount === 1) {
-        const list = document.querySelector(".borderlist");
-        list.classList.add("show-border");
-    }
+                    const list = document.querySelector(".todos-list");
+                    list.classList.add("show-border");
+                }
                 updateTaskCount();
 
-                
+
             }
         }
 
@@ -54,26 +53,27 @@
 
         function deleteTask(button) {
             const listItem = button.parentElement.parentElement;
-            
+
             listItem.remove();
             taskCount--;
             updateTaskCount();
             if (taskCount === 0) {
-        const list = document.querySelector(".borderlist");
-        list.classList.remove("show-border");
+                const list = document.querySelector(".todos-list");
+                list.classList.remove("show-border");
+            }
         }
-    }
+
         function updateTaskCount() {
-            const taskCountElement = document.getElementById("taskCount");
+            const taskCountElement = document.getElementById("task-count");
             taskCountElement.textContent = `Todos (${taskCount})`;
         }
-    
-    </script>
 
+    </script>
     <style>
         .gray-background {
-    background-color: #e0e0e0; /* Gray color */
-}
+            background-color: #e0e0e0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -82,11 +82,11 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-           
+
             background-size: 10px 10px;
-  background-image:
-    linear-gradient(to right, rgb(209, 208, 208) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(220, 218, 218) 1px, transparent 1px);
+            background-image:
+                linear-gradient(to right, rgb(209, 208, 208) 1px, transparent 1px),
+                linear-gradient(to bottom, rgb(220, 218, 218) 1px, transparent 1px);
         }
 
         .task-text {
@@ -94,7 +94,7 @@
             align-items: center;
         }
 
-        .topnav {
+        .top-nav {
             position: fixed;
             top: 0;
             left: 0;
@@ -104,7 +104,7 @@
             z-index: 1000;
         }
 
-        .LogoutBtn {
+        .logout-btn {
             background-color: rgb(98, 168, 226);
             color: #f2f2f2;
             border: none;
@@ -135,7 +135,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        #taskCount {
+        #task-count {
             padding: 10px;
             border-bottom: 2px solid #c2bebe;
             font-size: larger;
@@ -179,7 +179,7 @@
             border-radius: 0 3px 3px 0;
         }
 
-        .inlineinput {
+        .inline-input {
             margin: 0;
             padding: 5px;
             width: 100%;
@@ -222,22 +222,22 @@
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="top-nav">
         <div class="topnav-container">
             <div class="admin-text">admin</div>
-            <input class="LogoutBtn" type="submit" value="Logout">
+            <input class="logout-btn" type="submit" value="Logout">
         </div>
     </div>
 
     <div class="todo-container">
-        <div id="taskCount">
+        <div id="task-count">
             Todos (0)
         </div>
         <div class="add-task">
-            <input class="inlineinput" type="text" id="newTask" placeholder="Enter Task Here" autofocus>
+            <input class="inline-input" type="text" id="newTask" placeholder="Enter Task Here" autofocus>
             <button class="add-button" onclick="addTask()">Submit</button>
         </div>
-        <div class="borderlist">
+        <div class="todos-list">
 
         </div>
     </div>
