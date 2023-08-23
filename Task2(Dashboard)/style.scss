@@ -1,5 +1,5 @@
-$TextColor:#8e92a4;
-$SelectColor: #009e90;
+$textColor:#8e92a4;
+$selectColor: #009e90;
 
 * {
     box-sizing: border-box;
@@ -64,6 +64,10 @@ body {
         flex: 1;
         padding: 40px 20px 0 20px;
 
+        h1 { 
+            font-size: 30px; 
+            font-weight: 400;
+           }
         .top-nav {
             display: flex;
             justify-content: space-evenly;
@@ -76,13 +80,13 @@ body {
             }
 
             label:hover {
-                border-bottom: 2px solid $SelectColor;
-                color: $SelectColor;
+                border-bottom: 2px solid $selectColor;
+                color: $selectColor;
             }
 
             label {
                 font-weight: 600;
-                color: $TextColor;
+                color: $textColor;
                 padding: 20px 30px;
                 cursor: pointer;
             }
@@ -165,7 +169,6 @@ body {
 
         .sch-text {
             font-size: 20px;
-            color: var(--main-text-color);
             margin-left: 30px;
         }
 
@@ -214,14 +217,37 @@ body {
                     margin-right: 4px;
                 }
             }
+            .yellow { 
+                background-color: rgb(250, 244, 217);
+            }
+
+            .blue { 
+               background-color: rgb(178, 219, 249);
+            }
+
+            .pink { 
+                background-color: rgb(243, 125, 203);
+            }
+
+            .red { 
+                background-color: rgb(248, 183, 189);
+            }
+
+            .green { 
+                background-color: rgb(183, 248, 209);
+            }
+
+            .purple { 
+                background-color: rgb(229, 186, 246);
+            }
         }
 
     }
 }
 
 #opt-4:checked+label {
-    color: $SelectColor;
-    border-bottom: 2px solid $SelectColor;
+    color: $selectColor;
+    border-bottom: 2px solid $selectColor;
 }
 
 @media (max-width: 1200px) {
