@@ -1,0 +1,299 @@
+$textColor:#8e92a4;
+$selectColor: #009e90;
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.icons,
+body {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    flex-direction: column;
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .side-nav {
+        background-color: rgb(232, 232, 232);
+        width: 240px;
+        border-right: 1px solid #e3e7f7;
+        position: relative;
+        padding: 40px;
+
+        a {
+            padding: 3px 20px;
+            font-weight: 500;
+            font-size: 15px;
+            color: #000000;
+            display: block;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nd-nav-content {
+            span {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .middle-content {
+       
+        flex-direction: column;
+        flex: 1;
+        padding: 40px 20px 0 20px;
+
+        h1 { 
+            font-size: 30px; 
+            font-weight: 400;
+           }
+        .top-nav {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+
+            .topnav-item {
+                display: none;
+            }
+
+            label:hover {
+                border-bottom: 2px solid $selectColor;
+                color: $selectColor;
+            }
+
+            label {
+                font-weight: 600;
+                color: $textColor;
+                padding: 20px 30px;
+                cursor: pointer;
+            }
+
+        }
+
+        .tasks-wrapper {
+            padding: 30px 0;
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 8px;
+
+            span {
+                font-weight: 600;
+                font-size: 13px;
+                color: #5b5c60;
+            }
+
+            .task {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                margin-bottom: 16px;
+                padding-left: 20px;
+                font-size: 13px;
+                font-weight: 500;
+            }
+
+            .tag {
+                font-size: 10px;
+                padding: 6px 8px;
+                border-radius: 20px;
+            }
+
+            .tag.approved {
+                background-color: #d0f7f0;
+                color: #459885;
+            }
+
+            .tag.progress {
+                background-color: rgb(255, 218, 255);
+                color: rgb(152, 35, 152);
+            }
+
+            .tag.review {
+                background-color: rgb(255, 228, 228);
+                color: rgb(203, 37, 65);
+            }
+
+            .tag.waiting {
+                background-color: #f7f8fc;
+                color: rgb(96, 96, 96);
+            }
+
+            .upcoming {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+                font-weight: 400;
+            }
+
+        }
+
+        input {
+            cursor: pointer;
+        }
+    }
+
+    .right-nav {
+        width: 400px;
+        border-left: 1px solid #e3e7f7;
+        display: flex;
+        flex-direction: column;
+
+        .icons {
+            padding: 25px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .sch-text {
+            font-size: 20px;
+            margin-left: 30px;
+        }
+
+        .right-content {
+            padding: 10px 40px;
+            overflow-y: auto;
+            flex: 1;
+
+            .task-box {
+                position: relative;
+                border-radius: 10px;
+                width: 100%;
+                margin: 10px 0;
+                padding: 25px;
+                cursor: pointer;
+
+                .time {
+                    margin-bottom: 6px;
+                    opacity: 0.7;
+                    font-size: 12px;
+                }
+
+                .title {
+                    font-size: 14px;
+                    font-weight: 600;
+                    opacity: 0.8;
+                }
+
+                .more-button {
+                    position: absolute;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 50%;
+                    background-color: #8e92a4;
+                    box-shadow: 0 -4px 0 0 #8e92a4, 0 4px 0 0 #8e92a4;
+                    opacity: 0.4;
+                    right: 20px;
+                    top: 30px;
+                    cursor: pointer;
+                }
+
+                img {margin-top: 8px;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 4px;
+                }
+            }
+            .yellow { 
+                background-color: rgb(250, 244, 217);
+            }
+
+            .blue { 
+               background-color: rgb(178, 219, 249);
+            }
+
+            .pink { 
+                background-color: rgb(243, 125, 203);
+            }
+
+            .red { 
+                background-color: rgb(248, 183, 189);
+            }
+
+            .green { 
+                background-color: rgb(183, 248, 209);
+            }
+
+            .purple { 
+                background-color: rgb(229, 186, 246);
+            }
+        }
+
+    }
+}
+
+#opt-4:checked+label {
+    color: $selectColor;
+    border-bottom: 2px solid $selectColor;
+}
+
+@media (max-width: 1200px) {
+    .side-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .main {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .right-nav,.middle-content {
+        width: 100%;
+        display: block;
+    }
+
+    .tasks-wrapper {
+        height: auto;
+    }
+
+    .right-nav { 
+        .icons {
+            position: relative;
+            right: 70%;
+            
+        }
+    }
+}
+
+
+@media (max-width: 500px) {
+    .side-nav {
+        display: none;
+    }
+
+    .middle-content {
+        display: none;
+    }
+    
+    .right-nav {
+        width: 100%;
+        border-left: none;
+        display: block;
+    }
+    
+} 
