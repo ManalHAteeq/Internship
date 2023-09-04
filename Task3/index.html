@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>E-Commerece</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script> 
+    function change(BarId)
+    { 
+        const msg=document.getElementById("bread-crumb");
+        if(BarId == 'home')
+        {
+            msg.innerHTML='Home';
+        }
+        else if (BarId == 'gallery')
+        {
+            msg.innerHTML='Home / Gallery';
+        }
+        else if (BarId == 'blog')
+        {
+            msg.innerHTML='Home / Blog';
+        }
+        else if (BarId == 'shop')
+        {
+            msg.innerHTML='Home / Shop';
+        }
+        else if (BarId == 'shortcodes')
+        {
+            msg.innerHTML='Home / Shortcodes';
+        }
+    }
+    </script>
+
+</head>
+
+<body>
+    <div class="w-full h-full flex flex-col overflow-hidden font-sans"> <!-- main div-->
+        <div class="px-32 flex flex-col pb-3 justify-between"> <!-- Header-->
+            <div>
+                <img class="mx-1 inline float-right mt-10 opacity-50" src="C:\Users\Manal\Desktop\web.png" width="20">
+                <img class="mx-1 inline float-right mt-10 opacity-50" src="C:\Users\Manal\Desktop\wifi.png" width="20">
+                <img class="mx-1 inline float-right mt-10 opacity-50" src="C:\Users\Manal\Desktop\youtube.png"
+                    width="20">
+                <img class="mx-1 inline float-right mt-10 h-5 opacity-50" src="C:\Users\Manal\Desktop\g+.png"
+                    width="20">
+                <img class="mx-1 inline float-right mt-10 opacity-50" src="C:\Users\Manal\Desktop\tw.png" width="20">
+                <img class="mx-1 h-5 inline float-right mt-10 opacity-50" src="C:\Users\Manal\Desktop\fb.png"
+                    width="20">
+
+                <h1 class="text-4xl pt-5 text-purple-900 font-thin inline">Unite Demo</h1>
+                <div class="text-sm text-gray-700 font-medium "> FREE WorlPress Wedding Theme </div>
+            </div>
+
+        </div>
+
+        <div> <!--Bar-->
+            <ul class="bg-purple-900 overflow-hidden flex px-4 md:px-32">
+                <li><a href="#home" onclick="change('home')">Home</a></li>
+                <li><a href="#" onclick="change('gallery')">Gallery</a></li>
+                <li><a href="#" onclick="change('blog')">Blog</a></li>
+                <li class="active"><a href="#" onclick="change('shop')">Shop</a></li>
+                <li><a href="#" onclick="change('shortcodes')">Shortcodes</a></li>
+                <li><a href="#">About<i class="fa fa-caret-down pl-2"></i></a></li>
+                <li class="ml-auto border-r-0 items-center text-white"><i
+                        class="fa fa-shopping-cart text-white pr-2"></i>0 items - $0.00</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="flex flex-wrap"> <!-- middle content-->
+            <div> <!--Products Cards-->
+                <div id="bread-crumb" class="pl-32 pt-5"> Home / Shop</div>
+                <h1 class="text-5xl text-purple-700 font-thin px-32"> Shop </h1>
+                <div class="flex justify-between">
+                    <span class="pl-32"> Showing 1-10 of 23 results</span>
+                    <select id="dot" class="border-2 mr-6 w-48 text-sm border-gray-400 rounded-lg px-2" name="subject"
+                        id="subject">
+                        <option value="" selected="selected">Default sorting</option>
+                        <option> Highest Price to Lowest</option>
+                        <option> Lowest Price to Highest</option>
+                        <option> Newest </option>
+                    </select>
+                </div>
+
+                <div class="pl-32 mt-4 grid md:grid-cols-4 md:flex-1 w-60 flex-wrap grid-cols-2">
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56 relative "> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j1.png" class="w-full shadow-lg" height="35">
+                        <img class="absolute right-0 top-0" src="C:\Users\Manal\Desktop\sale.png" width="50">
+                        <div>
+                            <span> Denim Jacket </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-gray-400 line-through text-xs pr-2">$15.00 </span><span
+                                class="text-green-500 underline font-semibold">$12.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j2.png" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span class="pb-3"> Blue Jacket </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star-o"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-green-500 underline font-semibold">$18.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j3.png" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span> Red T-shirt </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i></div>
+                            <span class="text-green-500 underline font-semibold">$20.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56 relative"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j1.png" class="w-full shadow-lg" height="35">
+                        <img class="absolute right-0 top-0" src="C:\Users\Manal\Desktop\sale.png" width="50">
+                        <div>
+                            <span> Denim Jacket </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-gray-400 line-through text-xs pr-2">$15.00 </span><span
+                                class="text-green-500 underline font-semibold">$12.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j4.jpg" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span> Jelly Navy Hoodie </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-green-500 underline font-semibold">$20.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j5.jpg" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span> Black Hoodie </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-green-500 underline font-semibold">$35.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j6.png" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span> Blue T-shirt </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star-o"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-green-500 underline font-semibold">$30.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart</button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j4.jpg" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span> Jelly Navy Hoodie </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star-o"></i></i><i
+                                    class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                            </div>
+                            <span class="text-green-500 underline font-semibold">$20.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j7.jfif" class="w-full shadow-lg" height="35">
+                        <div>
+                            <span> Olive T-shirt </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+                            </div>
+                            <span class="text-green-500 underline font-semibold">$22.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white overflow-hidden p-3 m-3 w-56 relative"> <!-- card-->
+                        <img src="C:\Users\Manal\Desktop\j1.png" class="w-full shadow-lg" height="35">
+                        <img class="absolute right-0 top-0" src="C:\Users\Manal\Desktop\sale.png" width="50">
+                        <div>
+                            <span> Denim Jacket </span>
+                            <div> <i class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star text-purple-800"></i><i class="fa fa-star text-purple-800"></i><i
+                                    class="fa fa-star-o"></i></div>
+                            <span class="text-gray-400 line-through text-xs pr-2">$15.00 </span><span
+                                class="text-green-500 underline font-semibold">$12.00 </span>
+                        </div>
+                        <button
+                            class="bg-stone-200 mt-2 rounded-sm border-2 font-semibold border-gray-500 px-3 shadow-md hover:bg-gray-500"
+                            type="button">Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col bg-white mt-4 -top-40 pl-4"> <!-- side nav-->
+                <div class="flex w-52 mb-5 overflow-hidden items-center border-gray-500 border-2 rounded-r-md rounded">
+                    <input class="m-0 p-1 w-40 rounded-sm" type="text" id="newTask" placeholder="Search...">
+                    <button class="bg-purple-900 px-3 w-12 h-full"><i class="fa fa-search text-white "></i></button>
+                </div>
+
+                <div class="border-l-2 border-r-2 border-b-2 rounded "> <!--First grid/list-->
+                    <div class="grid grid-cols-3 pb-2 font-medium">
+                        <span class="rounded border-t-2 border-r-2 text-center">POPULAR</span>
+                        <span class="border-b-2 pl-4 text-purple-900">RECENT</span>
+                        <span class="border-b-2 pl-3"><i class="fa fa-comments text-purple-900"></i></span>
+                    </div>
+
+                    <div class=" grid grid-rows-5">
+
+                        <div class="border-b flex p-3 bg-white">
+                            <div class="rounded border-2">
+                                <img class="rounded p-1 border-gray-300 h-12" src="C:\Users\Manal\Desktop\i1.jpg"
+                                    width="48">
+                            </div>
+                            <div class="pl-2">
+                                <div class=" font-bold text-purple-800"> Hello, World!</div>
+                                <span class="text-xs font-bold text-gray-600 italic"> Aug 29,2023</span>
+                            </div>
+                        </div>
+
+                        <div class="border-b flex p-3 bg-white">
+                            <div class="rounded border-2">
+                                <img class="rounded p-1 border-gray-300 h-12" src="C:\Users\Manal\Desktop\i2.jpg"
+                                    width="48">
+                            </div>
+                            <div class="pl-2">
+                                <div class=" font-bold text-purple-800"> Post Format: Gallery</div>
+                                <span class="text-xs font-bold text-gray-600 italic"> Jan 10,2020</span>
+                            </div>
+                        </div>
+
+                        <div class="border-b flex p-3 bg-white">
+                            <div class="rounded border-2">
+                                <img class="rounded p-1 border-gray-300 h-12" src="C:\Users\Manal\Desktop\i3.jfif"
+                                    width="48">
+                            </div>
+                            <div class="pl-2">
+                                <div class=" font-bold text-purple-800"> Template Pingbacks and Trackbacks</div>
+                                <span class="text-xs font-bold text-gray-600 italic"> Jan 1,2019</span>
+                            </div>
+                        </div>
+
+                        <div class="border-b flex p-3 bg-white">
+                            <div class="rounded border-2">
+                                <img class="rounded p-1 border-gray-300 h-12" src="C:\Users\Manal\Desktop\i3.jfif"
+                                    width="48">
+                            </div>
+                            <div class="pl-2">
+                                <div class=" font-bold text-purple-800"> Template Comments</div>
+                                <span class="text-xs font-bold text-gray-600 italic"> Feb 1,2021</span>
+                            </div>
+                        </div>
+
+                        <div class="flex p-3 bg-white">
+                            <div class="rounded border-2">
+                                <img class="rounded p-1 border-gray-300 h-12" src="C:\Users\Manal\Desktop\i1.jpg"
+                                    width="48">
+                            </div>
+                            <div class="pl-2">
+                                <div class=" font-bold text-purple-800"> Post Format</div>
+                                <span class="text-xs font-bold text-gray-600 italic"> Jan 7,2013</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div> <!--Products section-->
+                    <div class="border-b-2 pt-5 font-thin text-3xl text-purple-700 "> Products </div>
+                    <div class="grid grid-rows-5">
+                        <div class="py-3 border-b-2">
+                            <img class="h-10 float-right" src="C:\Users\Manal\Desktop\woo1.jpg" width="48" />
+                            <div class="font-bold text-purple-900"> Woo Single #1 </div>
+                            <span class="line-through font-semibold text-gray-700">$3.00</span> <span class="text-gray-700 font-semibold underline">
+                                $2.00</span>
+                        </div>
+
+                        <div class="py-3 border-b-2">
+                            <img class="h-10 float-right" src="C:\Users\Manal\Desktop\woo2.jpg" width="48" />
+                            <div class="font-bold text-purple-900"> Woo Album #4 </div>
+                            <span class="text-gray-700 font-semibold"> $9.00</span>
+                        </div>
+
+                        <div class="py-3 border-b-2">
+                            <img class="h-10 float-right" src="C:\Users\Manal\Desktop\woo3.jpg" width="48" />
+                            <div class="font-bold text-purple-900"> Woo Single #3 </div>
+                            <span class="text-gray-700 font-semibold"> $3.00</span>
+                        </div>
+
+                        <div class="py-3 border-b-2">
+                            <img class="h-10 float-right" src="C:\Users\Manal\Desktop\woo1.jpg" width="48" />
+                            <div class="font-bold text-purple-900"> Woo Single #2 </div>
+                            <span class="text-gray-700 font-semibold"> $7.00</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
