@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+
+let taskCount = 1;
+
+    function edithandler(taskId) {
+      var task = document.getElementById(taskId);
+      var label = task.querySelector('label');
+      var newTaskLabel = prompt("Edit the task:", label.textContent);
+      if (newTaskLabel !== null && newTaskLabel.trim() !== "") {
+        label.textContent = newTaskLabel;
+      }
+    }
+    
+    function deletehandler(taskId) {
+      var task = document.getElementById(taskId);
+      task.remove();
+      taskCount--; 
+      updateTaskCount(); 
+    }
+    
+    function addTask() {
+      var newTaskLabel = document.getElementById("newTask").value;
+      if (newTaskLabel.trim() !== "") {
+        var table = document.querySelector(".ndtable");
+        var newRow = document.createElement("tr");
+        var taskId = "task" + (++taskCount);
+        newRow.id = taskId;
+        newRow.innerHTML = `
+          <td><input type="checkbox" id="${taskId}" name="${taskId}" value="${taskId}">
+          <label for="${taskId}">${newTaskLabel}</label></td>
+          <td class="iconcolumn">
+            <button class="btn2" onclick="edithandler('${taskId}')"><i class="fa fa-edit"></i></button>
+            <button class="btn" onclick="deletehandler('${taskId}')"><i class="fa fa-trash"></i></button>
+          </td> `;
+        table.appendChild(newRow);
+        document.getElementById("newTask").value = "";
+
+        updateTaskCount(); 
+      }
+    }
+
+    function updateTaskCount() {
+      const taskCountElement = document.getElementById("taskCount");
+      taskCountElement.textContent = `Todos (${taskCount})`;
+    }
+</script>    
+
+<style>
+  
+table {
+margin-left: auto;
+  margin-right: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+.ndtable 
+{
+    border: solid;
+  border-color: #e6e5e5;
+}
+
+body {
+  background-size: 10px 10px;
+  background-image:
+    linear-gradient(to right, rgb(209, 208, 208) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(220, 218, 218) 1px, transparent 1px);
+    margin: 0;
+    padding: 0;
+}
+
+.ndtable th,td { 
+    padding: 20px 20px 20px 20px; 
+}
+
+.maintable th,td {
+    padding: 10px 20px 20px 20px; 
+}
+
+  .iconcolumn {
+    text-align: right;
+}
+
+.btn { 
+background-color: red;
+color: white;
+cursor: pointer;
+padding: 4px 8px;
+border-color: red;
+}
+
+.btn2 { 
+background-color:rgb(46, 174, 59);
+color: white;
+cursor: pointer;
+padding: 4px 8px;
+border-color: rgb(46, 174, 59);
+}
+
+.ndtable tr:nth-child(odd) {
+  background-color: #dddddd; 
+}
+
+.submitbtn {
+background-color:rgb(86, 117, 231);
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  height: max-content;
+}
+
+.logout-btn {
+    background-color: rgb(98, 168, 226);
+    color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 10%;
+    height: 30px;
+}
+
+.topnav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+
+.admin-text {
+    color: #f2f2f2;
+    font-size: 17px;
+    margin-right: 10px;
+  }
+
+
+.todos-header {
+    background-color: #ddd;
+    border-radius: 5%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #ccc; 
+    overflow: hidden;
+    border-radius: 5px;
+   
+  }
+
+  .inlineinput {
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .subb {
+    border: none;
+    height: 41px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #1e90ff;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .maintable {
+     border-color: #1e90ff;
+    border: solid thin;
+    border-collapse: collapse;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5%;
+  width: 600px;
+  }
+
+</style>
+
+</head>
+<body>
+    <div class="topnav">
+        <div class="topnav-container">
+          <div class="admin-text">admin</div>
+          <input class="logout-btn" type="submit" value="Logout">
+        </div>
+      </div>
+
+      <div class="centered-content">
+    <table class="maintable"> 
+        <tr class="todos-header"> <td>
+            <span id="taskCount" style="font-weight: 700; font-size: large;">Todos (1)</span>
+        </td> </tr>
+      <tr>
+        <td>
+          <div class="input-container">
+            <input class="inlineinput" type="text" id="newTask" placeholder="Enter Task Here" autofocus>
+            <button class="subb" type="button" onclick="addTask()">Submit</button>
+          </div>
+        </td>
+      </tr> 
+      <tr><td>
+        <table class="ndtable">
+            <tr id="task1">
+                <td style="padding: 10px;">
+                <input style="size: 10px;" type="checkbox" id="option1" name="option1" value="task1">
+                <label for="option1"> Walk the dog </label>
+            </td>
+                <td class="iconcolumn">
+                   <button class="btn2" onclick="edithandler('task1')"><i class="fa fa-edit"></i></button>
+                   <button class="btn" onclick="deletehandler('task1')"><i class="fa fa-trash"></i></button>
+                </td>
+              </tr>
+            
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
