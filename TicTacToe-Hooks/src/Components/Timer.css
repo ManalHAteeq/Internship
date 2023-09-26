@@ -1,0 +1,13 @@
+.container { 
+    padding-top: 50px; 
+    display: flex;
+    justify-content: center;
+}
+
+.time-container { 
+background-color: rgb(239, 235, 235);
+width: 200px;
+padding: 2px 5px;
+border-radius: 1rem;
+text-align: center;
+}
